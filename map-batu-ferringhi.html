@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Peta Batu Ferringhi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body style="margin:0;">
+  <div id="map" style="width: 100vw; height: 100vh;"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Lokasi Pantai Batu Ferringhi
+    var map = L.map('map').setView([5.4683, 100.2420], 15);
+
+    // Guna OpenStreetMap Tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Letak Marker di Batu Ferringhi
+    L.marker([5.4683, 100.2420]).addTo(map)
+      .bindPopup('Pantai Batu Ferringhi')
+      .openPopup();
+  </script>
+</body>
+</html>
